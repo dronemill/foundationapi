@@ -1,0 +1,12 @@
+{
+	"name": "dronemill/foundationapi",
+	"description": "Foundational magic for running an api within Laravel 5",
+	"keywords": ["laravel", "api", "dronemill"],
+	"license": "MIT",
+	"minimum-stability": "stable",
+	"autoload": {
+		"psr-4": {
+			"DroneMill\\FoundationApi\\": "src/"
+		}
+	}
+}
