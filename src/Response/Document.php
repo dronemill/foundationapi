@@ -2,12 +2,13 @@
 
 namespace DroneMill\FoundationApi\Response;
 
-use \Illuminate\Database\Eloquent\Model as Eloquent;
-use \Illuminate\Support\Collection;
-use \Illuminate\Contracts\Support\Renderable;
-// use \Libs\Utils\Arrays as Arr;
-// use \DroneMill\Auth\Permission as AuthPermission;
-use \Log;
+use AuthPermission;
+use DroneMill\FoundationApi\Database\Model;
+use DroneMill\Helpers\Arrays as Arr;
+use Illuminate\Contracts\Support\Renderable;
+use Illuminate\Database\Eloquent\Model as Eloquent;
+use Illuminate\Support\Collection;
+use Log;
 
 
 class Document implements Renderable {
@@ -87,7 +88,7 @@ class Document implements Renderable {
 	 */
 	public function build($status = 200)
 	{
-		return \Response::json($this->render(), $status);
+		return response()->json($this->render(), $status);
 	}
 
 	/**
@@ -169,7 +170,7 @@ class Document implements Renderable {
 			//
 
 			// if we have a basic attribute, then just simply continue on
-			if ($attrInfo['type'] === \DroneMill\Database\Model::JSONVIEW_ATTRIBUTE_TYPE_ATTRIBUTE)
+			if ($attrInfo['type'] === Model::JSONVIEW_ATTRIBUTE_TYPE_ATTRIBUTE)
 			{
 				if (! array_key_exists($attr, $modelArray)) $modelArray[$attr] = null;
 
@@ -224,7 +225,7 @@ class Document implements Renderable {
 				continue;
 			}
 
-			if ($attrInfo['type'] === \DroneMill\Database\Model::JSONVIEW_ATTRIBUTE_TYPE_MODEL)
+			if ($attrInfo['type'] === Model::JSONVIEW_ATTRIBUTE_TYPE_MODEL)
 			{
 				$val = $this->smartLoadAttribute($attr, $attrInfo, $model);
 
@@ -240,7 +241,7 @@ class Document implements Renderable {
 				}
 			}
 
-			if ($attrInfo['type'] === \DroneMill\Database\Model::JSONVIEW_ATTRIBUTE_TYPE_COLLECTION)
+			if ($attrInfo['type'] === Model::JSONVIEW_ATTRIBUTE_TYPE_COLLECTION)
 			{
 				$collection = $this->smartLoadAttribute($attr, $attrInfo, $model);
 
