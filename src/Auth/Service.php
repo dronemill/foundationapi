@@ -21,9 +21,10 @@ class Service
 
 	public function find_user_by_token($authToken)
 	{
-		$token = forward_static_call_array([$this->provider->tokenModel, 'find'], [$authToken]);
+		$tokenModel = $this->provider->getTokenModel();
+		$token = forward_static_call_array([$tokenModel, 'find'], [$authToken]);
 
-		if (! ($token instanceof $this->provider->tokenModel))
+		if (! ($token instanceof $tokenModel))
 		{
 			Log::info('failed finding user by token', ['token' => $authToken]);
 			return false;
@@ -38,9 +39,10 @@ class Service
 
 	public function find_user_by_id($id)
 	{
-		$user = forward_static_call_array([$this->provider->authenticatableModel, 'find'], [$id]);
+		$authenticatableModel = $this->provider->getAuthenticatableModel();
+		$user = forward_static_call_array([$authenticatableModel, 'find'], [$id]);
 
-		if (! ($user instanceof $this->provider->authenticatableModel))
+		if (! ($user instanceof $authenticatableModel))
 		{
 			Log::info('failed finding user by id', ['id' => $id]);
 			return false;

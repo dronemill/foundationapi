@@ -44,6 +44,36 @@ class AuthProvider implements UserProvider
 	}
 
 	/**
+	 * fetch this providers instance of the Auth SErvice
+	 *
+	 * @return  DroneMill\FoundationApi\Auth\Service
+	 */
+	public function getService()
+	{
+		return $this->service;
+	}
+
+	/**
+	 * fetch the authenticatable Model
+	 *
+	 * @return  string
+	 */
+	public function getAuthenticatableModel()
+	{
+		return $this->authenticatableModel;
+	}
+
+	/**
+	 * fetch the token Model
+	 *
+	 * @return  string
+	 */
+	public function getTokenModel()
+	{
+		return $this->tokenModel;
+	}
+
+	/**
 	 * These two methods are not used, but required the
 	 * Illuminate\Contracts\Auth\UserProvider contractual interface
 	 */
