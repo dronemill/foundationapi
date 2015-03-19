@@ -9,6 +9,9 @@
 		}
 	],
 	"license": "MIT",
+	"require": {
+		"echo-it/laravel-jsonapi": "2.0.*"
+	},
 	"minimum-stability": "stable",
 	"autoload": {
 		"psr-4": {
