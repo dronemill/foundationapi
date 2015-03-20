@@ -10,8 +10,15 @@
 	],
 	"license": "MIT",
 	"require": {
-		"echo-it/laravel-jsonapi": "2.0.*"
+		"echo-it/laravel-jsonapi": "2.0.*",
+		"dronemill/phphelpers": "dev-master"
 	},
+	"repositories": [
+		{
+			"type": "vcs",
+			"url":  "git@github.com:dronemill/phphelpers.git"
+		}
+	],
 	"minimum-stability": "stable",
 	"autoload": {
 		"psr-4": {
