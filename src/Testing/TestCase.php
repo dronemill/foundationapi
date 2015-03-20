@@ -50,7 +50,7 @@ abstract class TestCase extends \Illuminate\Foundation\Testing\TestCase {
 		if (! class_exists('App'))
 		{
 			$app = new Static;
-			$app->createApplication();
+			$app->refreshApplication();
 		}
 
 		// create our FactoryMuffin instance
