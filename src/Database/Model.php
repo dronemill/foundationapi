@@ -7,9 +7,9 @@ use DB;
 use Log;
 use DroneMill\FoundationApi\Auth\Permission as AuthPermission;
 use DroneMill\FoundationApi\Auth\Permission\Exception as AuthPermissionException;
-use Illuminate\Database\Eloquent\Model as IlluminateModel;
+use Illuminate\Database\Eloquent\Model as EloquentModel;
 
-abstract class Model extends IlluminateModel {
+abstract class Model extends EloquentModel {
 
 	const JSONVIEW_ATTRIBUTE_TYPE_ATTRIBUTE  = 'attribute';
 	const JSONVIEW_ATTRIBUTE_TYPE_MODEL      = 'model';
