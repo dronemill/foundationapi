@@ -10,37 +10,20 @@ use Clousure;
 
 // TODO: Comment this class
 
-class TestCase extends \Illuminate\Foundation\Testing\TestCase {
+abstract class TestCase extends \Illuminate\Foundation\Testing\TestCase {
 
 	protected static $factoryMuffin = null;
 
 	protected $seeded = false;
-
-	/**
-	 * Creates the application.
-	 *
-	 * @return \Symfony\Component\HttpKernel\HttpKernelInterface
-	 */
-	public function createApplication()
-	{
-		$app = require static::BASE_PATH . '/bootstrap/app.php';
-
-		$app->make('Illuminate\Contracts\Console\Kernel')->bootstrap();
-
-		return $app;
-	}
+	protected $migrated = false;
 
 	public static function setupBeforeClass()
 	{
-		if (! class_exists('AuthPermission'))
-			class_alias('\DroneMill\FoundationApi\Auth\Permission', 'AuthPermission');
-
-		if (! class_exists('FactoryMuffin'))
-			class_alias('\League\FactoryMuffin\FactoryMuffin', 'FactoryMuffin');
-
-		if (! class_exists('FMaker'))
-			class_alias('\League\FactoryMuffin\Faker\Facade', 'FMaker');
-
+		if (! class_exists('App'))
+		{
+			$app = new Static;
+			$app->createApplication();
+		}
 
 		self::$factoryMuffin = new FactoryMuffin();
 		self::$factoryMuffin->loadFactories(static::FACTORIES_PATH);
