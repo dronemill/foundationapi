@@ -11,7 +11,9 @@
 	"license": "MIT",
 	"require": {
 		"echo-it/laravel-jsonapi": "2.0.*",
-		"dronemill/phphelpers": "dev-master",
+		"dronemill/phphelpers": "dev-master"
+	},
+	"require-dev": {
 		"mockery/mockery": "0.9.1",
 		"league/factory-muffin": "3.0.*@dev",
 		"league/factory-muffin-faker": "~1.0-dev"
