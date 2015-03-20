@@ -2,12 +2,12 @@
 
 namespace DroneMill\FoundationApi\Database;
 
-use \App;
-use \DB;
-use \Log;
-use \DroneMill\FoundationApi\Auth\Permission as AuthPermission;
-use \DroneMill\FoundationApi\Auth\Permission\Exception as AuthPermissionException;
-use \Illuminate\Database\Eloquent\Model as IlluminateModel;
+use App;
+use DB;
+use Log;
+use DroneMill\FoundationApi\Auth\Permission as AuthPermission;
+use DroneMill\FoundationApi\Auth\Permission\Exception as AuthPermissionException;
+use Illuminate\Database\Eloquent\Model as IlluminateModel;
 
 abstract class Model extends IlluminateModel {
 
