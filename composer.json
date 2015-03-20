@@ -22,7 +22,7 @@
 			"url":  "git@github.com:dronemill/phphelpers.git"
 		}
 	],
-	"minimum-stability": "stable",
+	"minimum-stability": "dev",
 	"autoload": {
 		"psr-4": {
 			"DroneMill\\FoundationApi\\": "src/"
