@@ -1,6 +1,6 @@
 <?php
 
-namespace DroneMill\FoundationApi\Providers;
+namespace DroneMill\FoundationApi\Auth;
 
 use DroneMill\FoundationApi\Auth\Service;
 use Illuminate\Contracts\Auth\UserProvider;
@@ -8,7 +8,7 @@ use Illuminate\Contracts\Auth\Authenticatable;
 use Log;
 use Config;
 
-class AuthProvider implements UserProvider
+class Provider implements UserProvider
 {
 	/**
 	 *
