@@ -5,8 +5,6 @@ namespace DroneMill\FoundationApi\Auth;
 use Illuminate\Database\Eloquent\Collection as Collection;
 use Log;
 use User;
-use DroneMill\FoundationApi\Providers\AuthProvider;
-
 
 // TODO: implement a contract here
 class Service
@@ -14,7 +12,7 @@ class Service
 	protected $user;
 	protected $provider;
 
-	public function __construct(AuthProvider $provider)
+	public function __construct(Provider $provider)
 	{
 		$this->provider = $provider;
 	}
