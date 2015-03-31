@@ -49,12 +49,12 @@
   1. replace the driver with `FoundationApi`
   2. replace the model with `\App\Models\User`
   3. add token_model with `\App\Models\UserToken`
-
+10. Modify app/Http/Controllers/Controller.php, and replace `use Illuminate\Routing\Controller as BaseController` with `DroneMill\FoundationApi\Http\Controllers\BaseController`
 
 Todo:
-- app\http\controllers\controller needs to extend BaseController
 - DatabaseServiceProvider
-- ConfigHijackServiceProvider
-- set connection and table properties in the DbResolverConnection and DbResolverConnectionHost models
-- add db seed DbConnectionSeeder
-- db migrations
+  - Documentation for it
+  - set connection and table properties in the DbResolverConnection and DbResolverConnectionHost models
+  - add db seed DbConnectionSeeder
+  - db migrations
+  - config in config/database.php
