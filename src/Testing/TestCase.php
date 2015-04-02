@@ -202,14 +202,30 @@ abstract class TestCase extends \Illuminate\Foundation\Testing\TestCase {
 	{
 		foreach ($objects as $object)
 		{
-			if (! isset($object->$attribute))
+			if (is_object($object))
 			{
-				$this->fail('attribute \'' . $attribute . '\' does not exist');
-			}
+				if (! isset($object->$attribute))
+				{
+					$this->fail('attribute \'' . $attribute . '\' does not exist');
+				}
 
-			if ($object->$attribute === $value)
+				if ($object->$attribute === $value)
+				{
+					return true;
+				}
+			}
+			else
 			{
-				return true;
+				if (! isset($object[$attribute]))
+				{
+					$this->fail('property \'' . $attribute . '\' does not exist');
+				}
+
+				if ($object[$attribute] === $value)
+				{
+					return true;
+				}
+
 			}
 		}
 
