@@ -34,6 +34,7 @@
   	'FMaker'           => 'League\FactoryMuffin\Faker\Facade',
   	'Model'            => 'DroneMill\FoundationApi\Database\Model',
   	'Seeder'           => 'DroneMill\FoundationApi\Database\Seeder',
+    'ApiHandler'       => 'DroneMill\FoundationApi\Handlers\Api',
   ]
   ```
 6. Now add the following providers in config/app.php:
