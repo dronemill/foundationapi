@@ -118,8 +118,7 @@ abstract class BaseController extends Controller {
 			case AuthPermission::PERMISSION_HOST:
 				$type = 'host';
 
-				Auth::user()->load('user_host');
-				if (! ($host = Auth::user()->user_host))
+				if (empty(Auth::user()->user_host))
 				{
 					throw new Exception("User host record is empty");
 				}
