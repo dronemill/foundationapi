@@ -10,7 +10,7 @@
 	],
 	"license": "MIT",
 	"require": {
-		"echo-it/laravel-jsonapi": "2.0.*",
+		"dronemill/laravel-jsonapi": "2.0.*",
 		"dronemill/phphelpers": "dev-master"
 	},
 	"require-dev": {
@@ -24,7 +24,7 @@
 			"url":  "git@github.com:dronemill/phphelpers.git"
 		},
 		{
-			"name": "echo-it/laravel-jsonapi",
+			"name": "dronemill/laravel-jsonapi",
 			"type": "vcs",
 			"url":  "git@github.com:dronemill/laravel-jsonapi.git"
 		}
