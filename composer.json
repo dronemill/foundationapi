@@ -10,7 +10,7 @@
 	],
 	"license": "MIT",
 	"require": {
-		"echo-it/laravel-jsonapi": "2.0.*",
+		"echo-it/laravel-jsonapi": "dev-master",
 		"dronemill/phphelpers": "dev-master"
 	},
 	"require-dev": {
