@@ -24,6 +24,7 @@
 			"url":  "git@github.com:dronemill/phphelpers.git"
 		},
 		{
+			"name": "echo-it/laravel-jsonapi",
 			"type": "vcs",
 			"url":  "git@github.com:dronemill/laravel-jsonapi.git"
 		}
