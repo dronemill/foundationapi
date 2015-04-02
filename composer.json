@@ -22,6 +22,10 @@
 		{
 			"type": "vcs",
 			"url":  "git@github.com:dronemill/phphelpers.git"
+		},
+		{
+			"type": "vcs",
+			"url":  "git@github.com:dronemill/laravel-jsonapi.git"
 		}
 	],
 	"minimum-stability": "dev",
