@@ -17,7 +17,7 @@ class ApiController extends TheBaseController
 		 *
 		 * @var  string
 		 */
-		$entity = ucfirst(str_singular($modelName));
+		$entity = ucfirst(camel_case(str_singular($modelName)));
 
 		/**
 		* Create handler name from model name
