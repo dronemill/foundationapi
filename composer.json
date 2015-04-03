@@ -10,7 +10,7 @@
 	],
 	"license": "MIT",
 	"require": {
-		"echo-it/laravel-jsonapi": "dev-putstatuscode",
+		"echo-it/laravel-jsonapi": "dev-downstream",
 		"dronemill/phphelpers": "dev-master"
 	},
 	"require-dev": {
