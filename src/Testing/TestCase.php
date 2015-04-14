@@ -95,6 +95,14 @@ abstract class TestCase extends \Illuminate\Foundation\Testing\TestCase {
 	}
 
 	/**
+	 * Alias 'skip' to 'markTestSkipped' because we are awesome
+	 */
+	public function skip()
+	{
+		return call_user_func_array([$this, 'markTestSkipped'], func_get_args());
+	}
+
+	/**
 	 * Reset model events
 	 *
 	 * There is currently a bug in Laravel laravel#1181 that prevents model events from firing
