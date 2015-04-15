@@ -16,6 +16,27 @@ use Illuminate\Http\Response as BaseResponse;
 class Api extends ApiHandler
 {
 	/**
+	 * Handle GET requests
+	 * @param EchoIt\JsonApi\Request $request
+	 * @return EchoIt\JsonApi\Model|Illuminate\Support\Collection|EchoIt\JsonApi\Response|Illuminate\Pagination\LengthAwarePaginator
+	 */
+	public function handleGet(ApiRequest $request)
+	{
+		return $this->handlePermissionAwareGet($request, new $this->model);
+	}
+
+	/**
+	 * Handle PUT requests
+	 * @param EchoIt\JsonApi\Request $request
+	 * @return EchoIt\JsonApi\Model|Illuminate\Support\Collection|EchoIt\JsonApi\Response
+	 */
+	public function handlePut(ApiRequest $request)
+	{
+		//you can use the default PUT functionality, or override with your own
+		return $this->handlePutDefault($request, new $this->model);
+	}
+
+	/**
 	 * Default handling of GET request.
 	 * Must be called explicitly in handleGet method.
 	 *
