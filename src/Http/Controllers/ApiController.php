@@ -10,6 +10,10 @@ use Request;
 
 class ApiController extends TheBaseController
 {
+
+	public $handlerNamespace = 'App\\Handlers\\Models\\';
+	public $handlerClassSuffix = 'Handler';
+
 	public function handleRequest($modelName, $id = null)
 	{
 		/**
@@ -23,7 +27,7 @@ class ApiController extends TheBaseController
 		* Create handler name from model name
 		* @var string
 		*/
-		$handlerClass = 'App\\Handlers\\Models\\' . $entity . 'Handler';
+		$handlerClass = $this->handlerNamespace . $entity . $this->handlerClassSuffix;
 
 
 		// ensure we actually have a handler class
