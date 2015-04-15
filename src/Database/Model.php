@@ -40,11 +40,17 @@ abstract class Model extends JsonApiModel {
 	 * @method  scopeWhereIdIn
 	 * @param   Illuminate\Database\Query\Builder
 	 * @param   array $ids
+	 * @oaram   bool $returnOnEmpty Should we abort scope when no ids were provided?
 	 * @return  Illuminate\Database\Query\Builder
 	 */
-	public function scopeWhereIdIn($query, $ids)
+	public function scopeWhereIdIn($query, $ids, $returnOnEmpty = false)
 	{
-		if (empty($ids)) return $query;
+		if (empty($ids))
+		{
+			if ($returnOnEmpty) return $query;
+
+			return $query->where('id', null);
+		}
 
 		return $query->whereIn('id', $ids);
 	}
