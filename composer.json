@@ -10,7 +10,7 @@
 	],
 	"license": "MIT",
 	"require": {
-		"echo-it/laravel-jsonapi": "dev-downstream",
+		"echo-it/laravel-jsonapi": "dev-linkedRenaming",
 		"dronemill/phphelpers": "dev-master"
 	},
 	"require-dev": {
