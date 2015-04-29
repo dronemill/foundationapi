@@ -48,6 +48,11 @@ class Api extends ApiHandler
 	{
 		$total = null;
 
+		if (empty($request->include))
+		{
+			$request->include = static::$exposedRelations;
+		}
+
 		if (empty($request->id))
 		{
 			// check if we are filtering anything
