@@ -86,7 +86,16 @@ class Api extends ApiHandler
 			}
 			else
 			{
-				$results = $model->get();
+				// FIXME this is both bad, and broken as soon as we support multi operations
+				// ie /v1/containers/1,2,3
+				if (empty($request->id))
+				{
+					$results = $model->get();
+				}
+				else
+				{
+					$results = $model->first();
+				}
 			}
 		}
 		catch (\Illuminate\Database\QueryException $e)
