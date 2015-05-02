@@ -29,9 +29,13 @@ abstract class Model extends JsonApiModel {
 	 */
 	public $incrementing = false;
 
-
-	public $jsonView = [
-		'id' => 'id', // the pk pf the model.
+	/**
+	 * The attributes that should be casted to native types.
+	 *
+	 * @var array
+	 */
+	protected $casts = [
+		'enabled' => 'boolean',
 	];
 
 	/**
