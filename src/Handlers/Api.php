@@ -32,8 +32,17 @@ class Api extends ApiHandler
 	 */
 	public function handlePut(ApiRequest $request)
 	{
-		//you can use the default PUT functionality, or override with your own
 		return $this->handlePutDefault($request, new $this->model);
+	}
+
+	/**
+	 * Handle POST requests
+	 * @param EchoIt\JsonApi\Request $request
+	 * @return EchoIt\JsonApi\Model
+	 */
+	public function handlePost(ApiRequest $request)
+	{
+		return $this->handlePostDefault($request, new $this->model);
 	}
 
 	/**
