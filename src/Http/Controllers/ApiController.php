@@ -10,9 +10,8 @@ use Request;
 
 class ApiController extends TheBaseController
 {
-
-	public $handlerNamespace = 'App\\Handlers\\Models\\';
-	public $handlerClassSuffix = 'Handler';
+	protected $handlerNamespace = 'App\\Handlers\\Models\\';
+	protected $handlerClassSuffix = 'Handler';
 
 	public function handleRequest($modelName, $id = null)
 	{
@@ -21,7 +20,14 @@ class ApiController extends TheBaseController
 		 *
 		 * @var  string
 		 */
-		$entity = ucfirst(camel_case(str_singular($modelName)));
+		if (array_key_exists($modelName, $this->modelInflections))
+		{
+			$entity = $this->modelInflections[$modelName];
+		}
+		else
+		{
+			$entity = ucfirst(camel_case(str_singular($modelName)));
+		}
 
 		/**
 		* Create handler name from model name
