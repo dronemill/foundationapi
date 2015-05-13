@@ -11,7 +11,7 @@
 	"license": "MIT",
 	"require": {
 		"echo-it/laravel-jsonapi": "dev-downstream",
-		"dronemill/phphelpers": "dev-master"
+		"dronemill/phphelpers": "0.0.1"
 	},
 	"require-dev": {
 		"mockery/mockery": "0.9.1",
