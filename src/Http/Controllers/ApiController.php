@@ -20,7 +20,7 @@ class ApiController extends TheBaseController
 		 *
 		 * @var  string
 		 */
-		if (array_key_exists($modelName, $this->modelInflections))
+		if (isset($this->modelInflections) && array_key_exists($modelName, $this->modelInflections))
 		{
 			$entity = $this->modelInflections[$modelName];
 		}
